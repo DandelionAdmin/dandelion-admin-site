@@ -1,0 +1,22 @@
+## 项目介绍  :id=start
+
+Chaos 一个功能强悍的 Spring Boot Starter 组件（Where dreams originate）
+
+**当前版本：** [![Sonatype Maven Release](https://img.shields.io/nexus/r/https/oss.sonatype.org/club.gclmit/chaos-bom.svg?style=flat-square)](https://search.maven.org/search?q=g:%20club.gclmit%20AND%20a:%20chaos-bom)
+[![Sonatype Maven Snapshots](https://img.shields.io/nexus/s/https/oss.sonatype.org/club.gclmit/chaos-bom.svg?style=flat-square)](https://oss.sonatype.org/content/repositories/snapshots/club/gclmit/)
+ 
+![开始使用](https://git.gclm.workers.dev/https://raw.githubusercontent.com/DandelionAdmin/chaos/master/docs/img/logo.png)
+
+## 下载使用  :id=download
+
+#### 1. 官网地址
+
+官网提供稳定版本的 Release 发行版本 [前往](http://dandelion.gclmit.club)
+
+![官方网址](https://image.coderlab.cn/preview/1532725601083879425)
+
+#### 2. 源码仓库
+
+如果你需要最新代码，请前往 Github 仓库 [前往](https://github.com/DandelionAdmin/chaos)
+
+![源码仓库](https://image.coderlab.cn/preview/1532725797951926274)
