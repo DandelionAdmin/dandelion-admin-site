@@ -1,0 +1,72 @@
+kind: pipeline
+name: dandelion-admin-site
+
+steps:
+  - name: restore-cache
+    image: drillster/drone-volume-cache
+    volumes:
+      - name: cache
+        path: /cache
+    settings:
+      restore: true
+      mount:
+        - ./node_modules
+
+  - name: build # 构建项目步骤
+    image: node:lts
+    depends_on: [ restore-cache ]
+    environment:
+      CI: false
+    volumes:
+      - name: cache
+        path: /root/.npm
+    commands:
+      - yarn install
+      - yarn run build
+      - mv docs/.vuepress/dist dist
+      - ls -l
+
+  - name: deploy # 上传文件步骤
+    image: appleboy/drone-scp
+    depends_on: [ build ] # 依赖 build-project 步骤，
+    settings:
+      # 服务器地址, 账号, 密码
+      host:
+        from_secret: ssh_host_124
+      port: 22345
+      username:
+        from_secret: ssh_username_124 # 使用secrets
+      key:
+        from_secret: ssh_key_124
+      # 需要上传的文件 「需要相对路径, 如果用绝对路径会整条路径打包上传」
+      # source: ./dist #  单个
+      source: #  多个
+        # - !* # 全都忽略
+        - ./dist
+      # 上传的目录文件夹
+      target: /app/servers/dandelion/website/
+      # ps: 移除的目录是test1, 将source所有中定义的所有内容放入test1目录中
+      # rm: true
+      command_timeout: 2m
+
+  - name: rebuild-cache
+    image: drillster/drone-volume-cache
+    depends_on: [ build ]
+    volumes:
+      - name: cache
+        path: /cache
+    settings:
+      rebuild: true
+      mount:
+        - ./node_modules
+
+volumes:
+  - name: cache
+    host:
+      path: /data/cache
+
+trigger:
+  branch:
+    - master
+  event:
+    - push

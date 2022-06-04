@@ -12,9 +12,6 @@ yarn-error.log
 out
 gen
 
-#yarn
-yarn.lock
-
 # vuepress
 docs/.vuepress/dist
 
