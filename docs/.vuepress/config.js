@@ -29,6 +29,7 @@ module.exports = {
                     {text: '介绍', link: '/pages/9cf655/'},
                     {text: '快速上手', link: '/pages/793dcb/'},
                     {text: '项目结构', link: '/pages/9568ac/'},
+                    {text: '版本说明', link: '/pages/c3810b/'},
                     {text: '更新日志', link: '/pages/9fef2f/'},
                     {
                         text: '模块',
