@@ -42,6 +42,12 @@ module.exports = {
                             {text: 'Chaos Extra模块', link: '/pages/8f5bd6/'},
                             {text: 'Chaos Starter模块', link: '/pages/6403fe/'},
                         ]
+                    },
+                    {
+                        text: '设计',
+                        items: [
+                            {text: '消息ID生成方案(YeinGid)', link: '/pages/f7d6be/'},
+                        ]
                     }
                 ]
             },
