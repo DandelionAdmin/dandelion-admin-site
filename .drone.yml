@@ -44,10 +44,12 @@ steps:
         # - !* # 全都忽略
         - ./dist
       # 上传的目录文件夹
-      target: /app/servers/dandelion/website/
+      target: /app/servers/dandelion/website/temp/
       # ps: 移除的目录是test1, 将source所有中定义的所有内容放入test1目录中
-      # rm: true
+      rm: true
       command_timeout: 2m
+      script:
+        - echo "Hello World"
 
   - name: rebuild-cache
     image: drillster/drone-volume-cache
