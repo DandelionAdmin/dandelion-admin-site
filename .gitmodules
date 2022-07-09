@@ -1,0 +1,3 @@
+[submodule "themes/vdoing"]
+	path = themes/vdoing
+	url = https://github.com/xugaoyi/vuepress-theme-vdoing.git

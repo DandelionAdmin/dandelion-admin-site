@@ -4,19 +4,16 @@ const htmlModules = require('./config/htmlModules.js');
 
 module.exports = {
 
-    theme: 'vdoing', // 使用依赖包主题
-    // theme: require.resolve('../../vdoing'), // 使用本地主题 (先将vdoing主题文件下载到本地：https://github.com/xugaoyi/vuepress-theme-vdoing)
+    // themes: 'vdoing', // 使用依赖包主题
+    theme: require.resolve('../../themes/vdoing/vdoing'), // 使用本地主题 (先将vdoing主题文件下载到本地：https://github.com/xugaoyi/vuepress-theme-vdoing)
 
-    title: "Dandelion Admin",
-    description: 'Dandelion Admin 官网',
+    title: "Gear4j Doc",
+    description: 'Gear4j 官方文档',
     // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
     head: [ // 注入到页面<head> 中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
         ['link', {rel: 'icon', href: '/img/favicon.ico'}], //favicons，资源放在public文件夹
-        ['meta', {name: 'keywords', content: 'Dandelion Admin,Chaos,admin'}],
-        ['meta', {name: 'theme-color', content: '#11a8cd'}], // 移动浏览器主题颜色
-
-        // ['meta', { name: 'wwads-cn-verify', content: '6c4b761a28b734fe93831e3fb400ce87' }], // 广告相关，你可以去掉
-        // ['script', { src: 'https://cdn.wwads.cn/js/makemoney.js', type: 'text/javascript' }], // 广告相关，你可以去掉
+        ['meta', {name: 'keywords', content: 'Gear4j Admin,Gear4j,Chaos,admin'}],
+        ['meta', {name: 'themes-color', content: '#11a8cd'}], // 移动浏览器主题颜色
     ],
 
     // 主题配置
@@ -24,7 +21,7 @@ module.exports = {
         nav: [
             {text: '首页', link: '/'},
             {
-                text: 'Chaos', link: '/pages/9cf655/',
+                text: 'Gear4j', link: '/pages/9cf655/',
                 items: [
                     {text: '介绍', link: '/pages/9cf655/'},
                     {text: '快速上手', link: '/pages/793dcb/'},
@@ -34,13 +31,13 @@ module.exports = {
                     {
                         text: '模块',
                         items: [
-                            {text: 'Chaos Bom模块', link: '/pages/1dd920/'},
-                            {text: 'Chaos Core模块', link: '/pages/abd5ad/'},
-                            {text: 'Chaos Storage模块', link: '/pages/916aba/'},
-                            {text: 'Chaos Web模块', link: '/pages/6752d9/'},
-                            {text: 'Chaos Logger模块', link: '/pages/ee5ece/'},
-                            {text: 'Chaos Extra模块', link: '/pages/8f5bd6/'},
-                            {text: 'Chaos Starter模块', link: '/pages/6403fe/'},
+                            {text: 'Gear4j Bom模块', link: '/pages/1dd920/'},
+                            {text: 'Gear4j Core模块', link: '/pages/abd5ad/'},
+                            {text: 'Gear4j Cos模块', link: '/pages/916aba/'},
+                            {text: 'Gear4j Web模块', link: '/pages/6752d9/'},
+                            {text: 'Gear4j Logger模块', link: '/pages/ee5ece/'},
+                            {text: 'Gear4j Extra模块', link: '/pages/8f5bd6/'},
+                            {text: 'Gear4j Starter模块', link: '/pages/6403fe/'},
                         ]
                     },
                     {
@@ -58,7 +55,7 @@ module.exports = {
         ],
         sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
         logo: '/img/logo.png', // 导航栏logo
-        repo: 'DandelionAdmin', // 导航栏右侧生成Github链接
+        repo: 'gclm/gear4j', // 导航栏右侧生成Github链接
         searchMaxSuggestions: 10, // 搜索结果显示最大数
         lastUpdated: '上次更新', // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
 
@@ -116,11 +113,6 @@ module.exports = {
 
     // 插件
     plugins: [
-        // [require('./plugins/love-me'), { // 鼠标点击爱心特效
-        //   color: '#11a8cd', // 爱心颜色，默认随机色
-        //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
-        // }],
-
         ['fulltext-search'], // 全文搜索
 
         // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
@@ -166,7 +158,7 @@ module.exports = {
         [
             'vuepress-plugin-zooming', // 放大图片
             {
-                selector: '.theme-vdoing-content img:not(.no-zoom)',
+                selector: '.themes-vdoing-content img:not(.no-zoom)',
                 options: {
                     bgColor: 'rgba(0,0,0,0.6)'
                 },

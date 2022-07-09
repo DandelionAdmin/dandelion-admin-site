@@ -1,6 +1,6 @@
-# Dandelion Admin Site
+# Gear4j Doc
 
 ## 介绍
-🎯  Dandelion Admin 官网，文档存储 与 项目展示
+🎯  Gear4j 官方文档
 
-## 在线链接：https://dandelion.gclmit.club/
+## 在线链接：https://gear4j.gclmit.club/
